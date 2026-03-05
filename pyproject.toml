@@ -1,0 +1,30 @@
+[project]
+name = "kalakari"
+version = "1.0.7"
+description = "Show your drawing skills and let the model decide what you are upto!"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+	"fastapi>=0.135.1",
+	"matplotlib>=3.10.8",
+	"numpy>=2.4.2",
+	"onnx>=1.20.1",
+	"onnxruntime>=1.24.2",
+	"onnxruntime-tools>=1.7.0",
+	"opencv-python>=4.13.0.92",
+	"pydantic>=2.12.5",
+	"scikit-learn>=1.8.0",
+	"torch",
+	"torchvision",
+	"tqdm>=4.67.3",
+	"uvicorn>=0.41.0",
+]
+
+[[tool.uv.index]]
+name = "pytorch-cu130"
+url = "https://download.pytorch.org/whl/cu130"
+explicit = true
+
+[tool.uv.sources]
+torch = [{ index = "pytorch-cu130"}]
+torchvision = [{ index = "pytorch-cu130"}]
